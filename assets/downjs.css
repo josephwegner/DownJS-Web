@@ -25,11 +25,22 @@ h1 {
 	-webkit-text-shadow: #ccc 1px 1px 1px;
 }
 
-P {
+p {
 	text-align: center;
 	font-size: 24px;
 	color: #3B3437;
 	text-shadow: #ccc 1px 1px 1px;
 	-moz-text-shadow: #ccc 1px 1px 1px;
 	-webkit-text-shadow: #ccc 1px 1px 1px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+p.also {
+	font-size: 15px;
+	color: #999697
+}
+
+.also a {
+	color: #3B3437;
 }
