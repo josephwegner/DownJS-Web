@@ -1,6 +1,7 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
+var path = require('path');
 
 var port = process.env.PORT || 1234;
 
@@ -19,15 +20,23 @@ var serve = http.createServer(function(req, res) {
 			res.end(data);
 		});
 
-	} else if(urlParts.pathname == "/downjs.css") {
-		fs.readFile(__dirname + "/assets/downjs.css", function(err, data) {
-			if(err) {
-				console.log(err);
-				res.end();
-				return false;
-			}
+	} else {
+		fs.exists(__dirname + "/assets/" + path.basename(urlParts.pathname), function(exists) {
+			if(exists) {
+				fs.readFile(__dirname + "/assets/" + path.basename(urlParts.pathname), function(err, data) {
+					if(err) {
+						console.log(err);
+						res.end();
+						return false;
+					}
 
-			res.end(data);
+					res.end(data);
+				});
+
+			} else {
+				res.statusCode = 404;
+				res.end("File Not Found!");
+			}
 		});
 	}
 
