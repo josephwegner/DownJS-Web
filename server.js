@@ -5,6 +5,9 @@ var path = require('path');
 
 var port = process.env.PORT || 1234;
 
+//Heroku has a weird node version
+var exists = (fs.exists) ? fs.exists : path.exists;
+
 var serve = http.createServer(function(req, res) {
 	var urlParts = url.parse(req.url, true);
 
@@ -21,7 +24,7 @@ var serve = http.createServer(function(req, res) {
 		});
 
 	} else {
-		fs.exists(__dirname + "/assets/" + path.basename(urlParts.pathname), function(exists) {
+		exists(__dirname + "/assets/" + path.basename(urlParts.pathname), function(exists) {
 			if(exists) {
 				fs.readFile(__dirname + "/assets/" + path.basename(urlParts.pathname), function(err, data) {
 					if(err) {
