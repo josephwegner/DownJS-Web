@@ -1,55 +1,235 @@
+/* All */
 body {
+	margin: 0;
+	padding: 0;
 	background-image: url("bg.png");
-	margin: none;
-	border: none;
-	padding: none;
-	width: 100%;
-}
-
-#wrapper {
+	font-family: arial;
+	overflow-x: hidden;
 	height: 100%;
-	width: 100%;
 }
 
-#center {
-	width: 450px;
-	margin: auto;
-	margin-top: 150px;
-	padding: 50px;
-	border-radius: 5px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	box-shadow: 0 0 15px 6px #ccc;
-	-moz-box-shadow: 0 0 15px 6px #ccc;
-	-webkit-box-shadow: 0 0 15px 6px #ccc;
-	background-color: white;
+.leftAlign {
+	text-align: left !important;
+}
+
+pre {
+	text-align: left;
+	width: 600px;
+	background-image: url("overlay.png");
+	line-height: 2;
+	color: white;
+	text-shadow: none;
+	padding: 8px;
+}
+
+/* Header */
+#header {
+	height: 200px;
+	background-color: #303030;
+	color: white;
+	padding: 0 5% 5px 5%;
+	position: relative;
+	box-shadow: 1px 1px 15px #303030;
 }
 
 h1 {
-	font-size: 34px;
-	text-align: center;
-	color: #3B3437;
-	text-shadow: #ccc 1px 1px 1px;
-	-moz-text-shadow: #ccc 1px 1px 1px;
-	-webkit-text-shadow: #ccc 1px 1px 1px;
+	text-shadow: 5px 5px 15px black;
+	float: left;
+	font-size: 150px;
+	margin: 0;
+	padding: 0;
 }
 
-p {
+#header ul {
+	position: absolute;
+	float: left;
+	list-style: none;
+	right: -150px;
+}
+
+#header ul li {
+	float: left;
+	background-color: #636363;
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	display: block;
+	position: relative;
+	top: 53px;
+	width: 200px;
+	font-size: 40px;
+	padding: 10px 0 10px 5px;
+	box-shadow: 1px 1px 15px #303030;
+	cursor: pointer;
+}
+#header ul a {
+	text-decoration: none;	
+	color: white;
+}
+
+#header ul li:hover, .activeNav {
+	background-color: #00459E !important;
+}
+
+#nav1 {
+	left: 0;
+}
+#nav2 {
+	left: -150px;
+}
+#nav3 {
+	left: -300px;
+}
+#nav4 { 
+	left: -450px;
+}
+
+/* Content */
+#mid {
+	padding: 50px;
+	color: #575757;
+	text-shadow: 2px 2px 2px #CCC;
+	width: 70%;
+	margin: auto;
 	text-align: center;
+}
+
+#desc {
 	font-size: 24px;
-	color: #3B3437;
-	text-shadow: #ccc 1px 1px 1px;
-	-moz-text-shadow: #ccc 1px 1px 1px;
-	-webkit-text-shadow: #ccc 1px 1px 1px;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin-bottom: 20px;
 }
 
-p.also {
-	font-size: 15px;
-	color: #999697
+#sylables {
+	font-weight: bold;
 }
 
-.also a {
-	color: #3B3437;
+#pronunciation {
+	font-style: italic;
+	font-size: 20px;
+	color: #7D7D7D;
+}
+
+/* Upload Form */
+#uploaderWrap {
+	padding: 10px 20px 10px 20px;
+	background-color: #00459E;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 5px 5px 15px #303030;
+	width: 400px;
+	margin: auto;
+	position: relative;
+	z-index: 2;
+}
+
+#uploaderWrap #fileName {
+	font-size: 30px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	padding-left: 10px;
+	color: #575757;
+	text-shadow: 2px 2px 2px #CCC;
+	width: 375px;
+	margin-bottom: 15px;
+}
+
+#uploaderWrap h2 {
+	font-size: 30px;
+	color: #EBEBEB;
+	text-shadow: 1px 1px 1px #000;
+}	
+
+#uploaderWrap #filePath {
+	font-size: 30px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	padding-left: 10px;
+	color: #575757;
+	text-shadow: 2px 2px 2px #CCC;
+	width: 240px;
+	margin-bottom: 15px;
+}
+
+#fakeUpload {
+	font-size: 30px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	color: #115700;
+	text-shadow: 0px 1px 1px #EBEBEB;
+	width: 125px;
+	margin-left: 10px;
+	text-align: center;
+	background-color: #27C200;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#filePick {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+	filter: alpha(opacity=1);
+	-moz-opacity: 0.01;
+	-khtml-opacity: 0.01;
+	opacity: 0.01;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+
+#addFile {
+	width: 375px;
+	font-size: 30px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	color: #115700;
+	text-shadow: 0px 1px 1px #EBEBEB;
+	text-align: center;
+	background-color: #27C200;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#sorryNoUpload {
+	position: relative;
+	z-index: 1;
+	width: 400px;
+	margin: auto;
+	padding: 10px 20px 10px 20px;
+}
+
+/* How it works */
+
+#howitworks pre {
+	margin: auto;
+}
+
+/* Docs */
+span.note {
+	font-size: 16px;
+	font-style: italic;
+	color: #7D7D7D;
+}
+
+/* Footer */
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;	
+	left: 0;
+	height: 23px;
+	font-size: 16px;
+	padding-top: 7px;
+	background-color: #303030;
+	color: #6B6B6B;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+#footer a {
+	color: #525252;
 }

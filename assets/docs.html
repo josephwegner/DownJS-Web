@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="downjs.css" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30212898-1']);
+  _gaq.push(['_setDomainName', 'downjs.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div id="header">
+	<div id="logo"><h1>DownJS</h1></div>
+	<ul>
+		<li id="nav1"><a href="index.html">Home</a></li>
+		<li class="activeNav" id="nav2">Docs</li>
+		<li id="nav3"><a href="security.html">Security</a></li>
+		<li id="nav4"><a href="https://github.com/josephwegner/DownJS/issues">Issues</a></li>
+	</ul>
+</div>
+<div id="mid" class="leftAlign">
+	<h2>Basic Usage</h2>
+	<p>DownJS is built with two main things in mind: <b>Be Fast</b> and <b>Be Easy</b>.  To accomplish that, we've simplified the DownJS process into three easy steps:</p>
+	<ol>
+		<li>Load the DownJS Script</li>
+		<li>Request the scripts you would like to load</li>
+		<li>Do whatever you want in the callback</li>
+	</ol>
+	
+	<h3>Load the DownJS Script</h3>
+	<p>The DownJS Script is where all the magic of loading the javascript files happens.  Simply load it by calling <a href="http://script.downjs.com">http://script.downjs.com</a> like so:<br><br>
+	<span class="note">You do not need to specify any file after the script.downjs.com domain.</span></p>
+	<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;http://script.downjs.com&quot;&gt;&lt;/script&gt;</pre>
+
+	<h3>Request the scripts you would like to load</h3>
+	<p>The downjs function accepts two parameters: a scripts array and a callback function.  The scripts array is simply an array of strings containing the names of the javascript files you would like to load.  For instance, if you wanted to load <a href="http://jquery.com">jQuery</a> and <a href="http://raphaeljs.com">Raphael</a> you would do this:<br><br>
+	<span class="note">The scripts array expects the name of the javascript plugin, <b>not</b> the name of the file.</span></p>
+	<pre>downjs([&#39;jquery&#39;, &#39;raphael&#39;], /*Optional Callback*/);</pre>
+
+	<h3>Do whatever you want in the callback</h3>
+	<p>We keep track of how the scripts are loading, and provide a callback option so we can keep you in the loop too.<br><br>
+	<span class="note">The callback function is optional</span></p>
+	<pre>downjs([&#39;jquery&#39;, &#39;raphael&#39;], function() {
+	alert(&quot;All scripts  are loaded!&quot;);
+});</pre><br><br>
+
+	<h2>Advanced Usage</h2>
+	<span class="note">Extended options coming soon</span>
+</div>
+<div id="footer">
+        <span class="contact">Feel free to contact me at any time via: <a href="mailto:joe@downjs.com">Email</a> | <a href="http://twitter.com/DownJS">Twitter</a></span>
+</div>
+</body>
+</html>

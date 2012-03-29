@@ -8,7 +8,7 @@ var port = process.env.PORT || 1234;
 var serve = http.createServer(function(req, res) {
 	var urlParts = url.parse(req.url, true);
 
-	if(urlParts.pathname == "" || urlParts.pathname == "/" || urlParts.pathname == "/index") {
+	if(urlParts.pathname == "" || urlParts.pathname == "/" || urlParts.pathname == "/index" || urlParts.pathname == "/index.html") {
 				
 		fs.readFile(__dirname + "/assets/downjs.html", function(err, data) {
 			if(err) {

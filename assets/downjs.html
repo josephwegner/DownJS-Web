@@ -1,11 +1,12 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>DownJS</title>
 <link rel="stylesheet" type="text/css" href="downjs.css" />
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-30212898-1']);
+  _gaq.push(['_setDomainName', 'downjs.com']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -15,14 +16,60 @@
   })();
 
 </script>
+<script type="text/javascript" src="http://script.downjs.com"></script>
+<script type="text/javascript">
+	downjs(["jquery", "raphael"], scriptsLoaded);
+
+function scriptsLoaded() {
+	$(document).ready(function() {
+		$("#sorryNoUpload").css('top', $("#uploaderWrap").height() * -1);
+		$("#addFile").click(function(e) {
+			e.preventDefault();
+			$("#uploaderWrap").slideUp(400);
+			$("#sorryNoUpload").animate({'top': 0}, 400);
+		});
+	});
+}
+</script>
 </head>
 <body>
-<div id="wrapper">
-	<div id="center">
-		<h1>DownJS</h1>
-		<p>Coming Soon</p>
-		<p class="also">(Check out a <a target="_blank" href="http://t.co/qcl9yocC">demo</a>)</p>
+<div id="header">
+	<div id="logo"><h1>DownJS</h1></div>
+	<ul>
+		<li class="activeNav"  id="nav1">Home</li>
+		<li id="nav2"><a href="docs.html">Docs</a></li>
+		<li id="nav3"><a href="security.html">Security</a></li>
+		<li id="nav4"><a href="https://github.com/josephwegner/DownJS/issues">Issues</a></li>
+	</ul>
+</div>
+<div id="mid">
+	<div id="desc">
+		<span id="sylables">down &bull; J &bull; S</span> <span id="pronunciation">[down-jay-es]</span>: <span id="whatitis">An easy-to-use repository for all your frontend javascript</span>
 	</div>
+	<div id="uploaderWrap">
+		<h2>Upload to DownJS</h2>
+		<form id="#" method="POST">
+			<input type="text" name="name" id="fileName"  placeholder="Name" /><br>
+			<input type="text" name="filepath" id="filePath" placeholder="JS File" /><button id="fakeUpload" onclick="event.stopPropagation(); javascript:document.getElementById('filePick').click(); return false;">Browse</button><br>
+			<input type="file" name="file" id="filePick" />
+			<input type="submit" value="Upload" id="addFile" />
+		</form>	
+	</div>
+	<div id="sorryNoUpload">
+		<p>Sorry!  We're not quite ready to handle uploads yet.  This will be enabled very soon, though!</p>
+	</div>
+	<div id="howitworks">
+		<h2>How It Works:</h2>
+		<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;http://script.downjs.com&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+	downjs([&quot;jquery&quot;, &quot;raphael&quot;], function() {
+		//Scripts are loaded
+	});
+&lt;/script&gt;</pre>
+	</div>
+</div>
+<div id="footer">
+	<span class="contact">Feel free to contact me at any time via: <a href="mailto:joe@downjs.com">Email</a> | <a href="http://twitter.com/DownJS">Twitter</a></span>
 </div>
 </body>
 </html>

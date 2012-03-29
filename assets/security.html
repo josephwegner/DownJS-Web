@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="downjs.css" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30212898-1']);
+  _gaq.push(['_setDomainName', 'downjs.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+<div id="header">
+	<div id="logo"><h1>DownJS</h1></div>
+	<ul>
+		<li id="nav1"><a href="index.html">Home</a></li>
+		<li id="nav2"><a href="docs.html">Docs</a></li>
+		<li class="activeNav" id="nav3">Security</li>
+		<li id="nav4"><a href="https://github.com/josephwegner/DownJS/issues">Issues</a></li>
+	</ul>
+</div>
+<div id="mid" class="leftAlign">
+	<h2>Security</h2>
+	<p><b>Your security is very important to us.</b>  Seriously.  Very important.  We understand that by using DownJS you're trusting us not only to send you the correct scripts, but to not interfere with your users in any way - malicious or not.  While we have to keep our script search functionality hidden, everything else is open sourced and publically viewable on <a href="https://github.com/josephwegner">Github</a>.  Look for anything with a DownJS- prefix.  That will include this website, the DownJS script, and the tracking modules as referenced below.</p>
+	
+	<h2>Tracking</h2>
+	<p>We also understand that it's important that your users aren't tracked in any ways that they haven't agreed to.  In the name of transparency, here's a list of things we will and will not do when it comes to tracking.</p>
+	<h3>Things We Will Do</h3>
+	<ul>
+		<li>This public facing website is tracked using standard Google Analytics.  That only applies to the http://downjs.com and http://www.downjs.com domain.</li>
+		<li>Our script searcher and loader is tracked with mixpanel.  We never store your domain name, or any user-specific information along with these results.  Each time a session is started with the script loader we assign a unique ID.  This ID is <b>only</b> used to track the flow of that current session, so we can pinpoint bottlenecks.</li>
+		<li>When you upload a script to DownJS we <b>do</b> store user-specific details such as IP Address.  This data is necessary so we can weed out people uploading malicious or spammy content.</li>
+		<li>We will keep this list updated, and will be intentional about informing you if anything changes.</li>
+		<li>  We will consider you, our user, before making any changes to these policies, and will hold ourselves to the moral standard outlined on this page.</li>
+	</ul>	
+	<h3>Things We Won't Do</h3>
+	<ul>
+		<li>We will never track your users for simply loading the DownJS script.  The tracking begins once they request scripts from our servers.</li>
+		<li>We will never sell, publicize, or in any other way share our tracking data.</li>
+		<li>We will never prioritize anything higher than keep your users secure and our tracking minimal</li>
+	</ul>
+	<p>As an additional comfort to you, any tracking we do (beyond standard Google Analytics) is open sourced and publically viewable on <a href="https://github.com/josephwegner/DownJS-Tracking">Github</a>.<p>
+</div>
+<div id="footer">
+	<span class="contact">Feel free to contact me at any time via: <a href="mailto:joe@downjs.com">Email</a> | <a href="http://twitter.com/DownJS">Twitter</a></span>
+</div>
+</body>
+</html>
